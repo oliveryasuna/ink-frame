@@ -1,29 +1,12 @@
+![Banner](./media/banner.svg)
+
 # ink-frame
 
 Grids of bordered boxes for [Ink](https://github.com/vadimdemedes/ink), where the borders actually join where they meet.
 
 Ink's own box borders are fine for a single box. Put two of them next to each other and the seam between them comes out as `││`, two parallel lines instead of one shared edge. That's because a box border is one unbroken line and there's nowhere to hang a `┬` or a `┼` part-way along it. `ink-frame` sidesteps that by painting every border into a single character grid and resolving each cell once, so a spot where four boxes meet becomes a `┼` and a T-junction becomes a `┬`, `┤`, and so on, without you ever writing those characters yourself.
 
-```
-┌──────────────────────────────────────┐
-│ Frame                                │
-├─────────────┬────────────────────────┤
-│ fixed width │ grow                   │
-│             │ ┌────────────────────┐ │
-│             │ │ nested box         │ │
-│             │ └────────────────────┘ │
-│             │                        │
-│             ├────────────┬───────────┤
-│             │ two grows  │ what is   │
-├─────────────┤ share      │ left      │
-│ a pane      │            │           │
-├─────────────┴────────────┴───────────┤
-│ junctions derived                    │
-└──────────────────────────────────────┘
-```
-
-> [!NOTE]
-> Most modern terminals support connected box drawing characters, so unlike the above example, your borders may be connected.
+![Example](./media/example.png)
 
 ## Install
 
