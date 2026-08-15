@@ -1,12 +1,12 @@
 {
-  "name": "@oliveryasuna/ink-frame",
+  "name": "ink-frame",
   "version": "1.0.0",
   "license": "MIT",
   "homepage": "https://github.com/oliveryasuna/ink-frame",
   "author": "Oliver Yasuna",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliveryasuna/ink-frame.git"
+    "url": "git+https://github.com/oliveryasuna/ink-frame.git"
   },
   "bugs": "https://github.com/oliveryasuna/ink-frame/issues",
   "keywords": [
@@ -25,6 +25,9 @@
     "terminal",
     "tui"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -76,5 +79,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "sideEffects": false
 }

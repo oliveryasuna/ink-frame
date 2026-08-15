@@ -2,6 +2,8 @@
 
 # ink-frame
 
+[![npm](https://img.shields.io/npm/v/ink-frame?logo=npm)](https://www.npmjs.com/package/ink-frame)
+
 Grids of bordered boxes for [Ink](https://github.com/vadimdemedes/ink), where the borders actually join where they meet.
 
 Ink's own box borders are fine for a single box. Put two of them next to each other and the seam between them comes out as `││`, two parallel lines instead of one shared edge. That's because a box border is one unbroken line and there's nowhere to hang a `┬` or a `┼` part-way along it. `ink-frame` sidesteps that by painting every border into a single character grid and resolving each cell once, so a spot where four boxes meet becomes a `┼` and a T-junction becomes a `┬`, `┤`, and so on, without you ever writing those characters yourself.
@@ -11,16 +13,16 @@ Ink's own box borders are fine for a single box. Put two of them next to each ot
 ## Install
 
 ```sh
-bun add @oliveryasuna/ink-frame
+bun add ink-frame
 
 # or pnpm
-pnpm add @oliveryasuna/ink-frame
+pnpm add ink-frame
 
 # or npm
-npm install @oliveryasuna/ink-frame
+npm install ink-frame
 
 # or yarn
-yarn add @oliveryasuna/ink-frame
+yarn add ink-frame
 ```
 
 It expects `ink` (>=5) and `react` (>=18) alongside it, which you'll already have if you're building an Ink app.
@@ -42,7 +44,7 @@ You rarely build those by hand. `splitColumns` and `splitRows` carve one rect in
 
 ```tsx
 import {render, Text, useStdout} from 'ink';
-import {Frame, Pane, splitColumns, splitRows} from '@oliveryasuna/ink-frame';
+import {Frame, Pane, splitColumns, splitRows} from 'ink-frame';
 
 const App = () => {
   const {stdout} = useStdout();
@@ -93,7 +95,7 @@ Position and size come from the `rect` and can't be overridden. That's deliberat
 `interiorOf` gives you the area inside a border, which is the rect minus its two edges. Handy when a child needs to know how much room it really has:
 
 ```tsx
-import {interiorOf} from '@oliveryasuna/ink-frame';
+import {interiorOf} from 'ink-frame';
 
 const inner = interiorOf(main); // {left, top, width, height} of the content area
 ```
