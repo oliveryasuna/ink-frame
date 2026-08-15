@@ -2,7 +2,7 @@
 
 # ink-frame
 
-[![npm](https://img.shields.io/npm/v/ink-frame?logo=npm)](https://www.npmjs.com/package/ink-frame)
+[![npm](https://img.shields.io/npm/v/@oliveryasuna/ink-frame?logo=npm)](https://www.npmjs.com/package/@oliveryasuna/ink-frame)
 
 Grids of bordered boxes for [Ink](https://github.com/vadimdemedes/ink), where the borders actually join where they meet.
 
@@ -13,16 +13,16 @@ Ink's own box borders are fine for a single box. Put two of them next to each ot
 ## Install
 
 ```sh
-bun add ink-frame
+bun add @oliveryasuna/ink-frame
 
 # or pnpm
-pnpm add ink-frame
+pnpm add @oliveryasuna/ink-frame
 
 # or npm
-npm install ink-frame
+npm install @oliveryasuna/ink-frame
 
 # or yarn
-yarn add ink-frame
+yarn add @oliveryasuna/ink-frame
 ```
 
 It expects `ink` (>=5) and `react` (>=18) alongside it, which you'll already have if you're building an Ink app.
@@ -44,7 +44,7 @@ You rarely build those by hand. `splitColumns` and `splitRows` carve one rect in
 
 ```tsx
 import {render, Text, useStdout} from 'ink';
-import {Frame, Pane, splitColumns, splitRows} from 'ink-frame';
+import {Frame, Pane, splitColumns, splitRows} from '@oliveryasuna/ink-frame';
 
 const App = () => {
   const {stdout} = useStdout();
@@ -95,7 +95,7 @@ Position and size come from the `rect` and can't be overridden. That's deliberat
 `interiorOf` gives you the area inside a border, which is the rect minus its two edges. Handy when a child needs to know how much room it really has:
 
 ```tsx
-import {interiorOf} from 'ink-frame';
+import {interiorOf} from '@oliveryasuna/ink-frame';
 
 const inner = interiorOf(main); // {left, top, width, height} of the content area
 ```
