@@ -1,5 +1,7 @@
 ![Banner](./media/banner.svg)
 
+Check out my [awesome-ink](https://github.com/oliveryasuna/awesome-ink) list for more awe-mazing-tastic Ink libraries!
+
 # ink-frame
 
 [![npm](https://img.shields.io/npm/v/@oliveryasuna/ink-frame?logo=npm)](https://www.npmjs.com/package/@oliveryasuna/ink-frame)
@@ -9,8 +11,6 @@ Grids of bordered boxes for [Ink](https://github.com/vadimdemedes/ink), where th
 Ink's own box borders are fine for a single box. Put two of them next to each other and the seam between them comes out as `││`, two parallel lines instead of one shared edge. That's because a box border is one unbroken line and there's nowhere to hang a `┬` or a `┼` part-way along it. `ink-frame` sidesteps that by painting every border into a single character grid and resolving each cell once, so a spot where four boxes meet becomes a `┼` and a T-junction becomes a `┬`, `┤`, and so on, without you ever writing those characters yourself.
 
 ![Example](./media/example.png)
-
-Check out my [awesome-ink](https://github.com/oliveryasuna/awesome-ink) list for more awe-mazing-tastic Ink libraries!
 
 ## Install
 
@@ -110,6 +110,8 @@ Sizes passed to `splitColumns` / `splitRows` are either a fixed number of cells 
 
 If the fixed sizes don't fit, they scale down instead of overflowing. A terminal narrower than your sidebar shrinks the sidebar rather than shoving panes off the edge of the screen, which is almost always what you want when someone drags their window small.
 
+`splitColumns` / `splitRows` overlap adjacent rects by one cell so neighbours share a border. `packColumns` / `packRows` take the exact same arguments but butt panes edge to edge with no shared cell, so the sizes sum to the full width or height. Reach for those with a `noBorders` frame (see below).
+
 ## Border styles
 
 `borderStyle` takes `'normal'` (the default), `'bold'`, `'double'`, or `'none'`, and `borderColor` takes any Ink color:
@@ -120,23 +122,36 @@ If the fixed sizes don't fit, they scale down instead of overflowing. A terminal
 
 The style applies to the whole frame, junctions included.
 
+### No borders
+
+`borderStyle="none"` still paints the border ring, just as spaces, so content stays inset by a cell on every side. When you want no borders and no space reserved for them, pass `noBorders` instead:
+
+```tsx
+<Frame width={width} height={height} noBorders>
+```
+
+Now each pane's content fills its whole `rect`. Reach for `packColumns` / `packRows` to lay those rects out, not `splitColumns` / `splitRows`: the split functions overlap neighbours by a cell to share a border, and with `noBorders` that shared cell turns into a cell of overlapping content. The pack functions butt panes edge to edge, so nothing collides.
+
 ## API
 
-- `Frame`: draws the border grid and lays out panes. Props: `width`, `height`, `borderColor?`, `borderStyle?`.
+- `Frame`: draws the border grid and lays out panes. Props: `width`, `height`, `borderColor?`, `borderStyle?`, `noBorders?`.
 - `Pane`: one bordered box. Props: `rect`, plus any `Box` prop for its content.
 - `splitColumns(rect, sizes)`: splits a rect into a row of rects that share borders.
 - `splitRows(rect, sizes)`: splits a rect into a column of rects that share borders.
+- `packColumns(rect, sizes)`: like `splitColumns`, but the rects butt together with no shared cell.
+- `packRows(rect, sizes)`: like `splitRows`, but the rects butt together with no shared cell.
 - `interiorOf(rect)`: the area inside a rect's border.
 - `Rect`, `PaneSize`: the types.
 
-The return types of the split functions are tuples the same length as the sizes you pass, so `const [a, b, c] = splitRows(...)` destructures cleanly with no possibly-undefined checks.
+The return types of the split and pack functions are tuples the same length as the sizes you pass, so `const [a, b, c] = splitRows(...)` destructures cleanly with no possibly-undefined checks.
 
 ## Example
 
-There's a runnable one at [`example.tsx`](./example.tsx) that puts every feature on a single screen: nested splits, a hand-built inset box, fixed and growing panes, and the junctions falling out on their own.
+There are runnable ones in [`examples/`](./examples). [`example.tsx`](./examples/example.tsx) puts every bordered feature on a single screen: nested splits, a hand-built inset box, fixed and growing panes, and the junctions falling out on their own. [`example-noborders.tsx`](./examples/example-noborders.tsx) shows the `noBorders` frame with `packColumns` / `packRows`.
 
 ```sh
-bun example.tsx
+bun examples/example.tsx
+bun examples/example-noborders.tsx
 ```
 
 ## Contributing

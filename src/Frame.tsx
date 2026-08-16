@@ -40,13 +40,14 @@ const Frame = ((
     height,
     borderColor,
     borderStyle = 'normal',
+    noBorders = false,
     children
   }: FrameProps
 ) => {
   const panes = flattenChildren(children)
     .filter((child): child is ReactElement<PaneProps> => (isValidElement(child) && (child.type === Pane)));
 
-  const lines = renderBorders(width, height, panes.map(pane => pane.props.rect), borderStyle);
+  const lines = (noBorders ? [] : renderBorders(width, height, panes.map(pane => pane.props.rect), borderStyle));
 
   return (
     <Box
@@ -66,9 +67,11 @@ const Frame = ((
 
       {panes.map((pane, index) => {
         const {rect, children: content, ...boxProps} = pane.props;
-        const interior = interiorOf(rect);
+        // With borders, content sits inside the ring; without, it fills the
+        // rect.
+        const region = (noBorders ? rect : interiorOf(rect));
 
-        if((content === undefined) || (interior.width === 0) || (interior.height === 0)) {
+        if((content === undefined) || (region.width === 0) || (region.height === 0)) {
           return null;
         }
 
@@ -78,10 +81,10 @@ const Frame = ((
             key={index}
             {...boxProps}
             position="absolute"
-            marginLeft={interior.left}
-            marginTop={interior.top}
-            width={interior.width}
-            height={interior.height}
+            marginLeft={region.left}
+            marginTop={region.top}
+            width={region.width}
+            height={region.height}
             overflow="hidden"
           >
             {content}

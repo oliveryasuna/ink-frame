@@ -1,6 +1,6 @@
-import type {Rect} from './src';
+import type {Rect} from '../src';
 import {render, Text, useStdout} from 'ink';
-import {Frame, interiorOf, Pane, splitColumns, splitRows} from './src';
+import {Frame, interiorOf, Pane, splitColumns, splitRows} from '../src';
 
 /** Rows a header or footer band takes, borders included. */
 const BAND = 3;
@@ -15,7 +15,7 @@ const Size = (({rect}: {rect: Rect;}) => {
 /**
  * Every `Frame` feature on one screen.
  *
- * Run it with `bun packages/cli/src/tui/components/Frame/example.tsx`.
+ * Run it with `bun examples/example.tsx`.
  */
 const FrameExample = (() => {
   const {stdout} = useStdout();
