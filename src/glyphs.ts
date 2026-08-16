@@ -17,6 +17,7 @@ interface GlyphStyles {
   normal: string;
   bold: string;
   double: string;
+  none: string;
 }
 
 const GLYPHS = (new Map<number, GlyphStyles>([
@@ -25,7 +26,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineVertical,
       bold: figures.lineVerticalBold,
-      double: figures.lineVerticalDouble
+      double: figures.lineVerticalDouble,
+      none: ' '
     }
   ],
   [
@@ -33,7 +35,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.line,
       bold: figures.lineBold,
-      double: figures.lineDouble
+      double: figures.lineDouble,
+      none: ' '
     }
   ],
   [
@@ -41,7 +44,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineDownRight,
       bold: figures.lineDownBoldRightBold,
-      double: figures.lineDownDoubleRightDouble
+      double: figures.lineDownDoubleRightDouble,
+      none: ' '
     }
   ],
   [
@@ -49,7 +53,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineDownLeft,
       bold: figures.lineDownBoldLeftBold,
-      double: figures.lineDownDoubleLeftDouble
+      double: figures.lineDownDoubleLeftDouble,
+      none: ' '
     }
   ],
   [
@@ -57,7 +62,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpRight,
       bold: figures.lineUpBoldRightBold,
-      double: figures.lineUpDoubleRightDouble
+      double: figures.lineUpDoubleRightDouble,
+      none: ' '
     }
   ],
   [
@@ -65,7 +71,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpLeft,
       bold: figures.lineUpBoldLeftBold,
-      double: figures.lineUpDoubleLeftDouble
+      double: figures.lineUpDoubleLeftDouble,
+      none: ' '
     }
   ],
   [
@@ -73,7 +80,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpDownRight,
       bold: figures.lineUpBoldDownBoldRightBold,
-      double: figures.lineUpDoubleDownDoubleRightDouble
+      double: figures.lineUpDoubleDownDoubleRightDouble,
+      none: ' '
     }
   ],
   [
@@ -81,7 +89,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpDownLeft,
       bold: figures.lineUpBoldDownBoldLeftBold,
-      double: figures.lineUpDoubleDownDoubleLeftDouble
+      double: figures.lineUpDoubleDownDoubleLeftDouble,
+      none: ' '
     }
   ],
   [
@@ -89,7 +98,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineDownLeftRight,
       bold: figures.lineDownBoldLeftBoldRightBold,
-      double: figures.lineDownDoubleLeftDoubleRightDouble
+      double: figures.lineDownDoubleLeftDoubleRightDouble,
+      none: ' '
     }
   ],
   [
@@ -97,7 +107,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpLeftRight,
       bold: figures.lineUpBoldLeftBoldRightBold,
-      double: figures.lineUpDoubleLeftDoubleRightDouble
+      double: figures.lineUpDoubleLeftDoubleRightDouble,
+      none: ' '
     }
   ],
   [
@@ -105,7 +116,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineUpDownLeftRight,
       bold: figures.lineUpBoldDownBoldLeftBoldRightBold,
-      double: figures.lineUpDoubleDownDoubleLeftDoubleRightDouble
+      double: figures.lineUpDoubleDownDoubleLeftDoubleRightDouble,
+      none: ' '
     }
   ],
   // Stubs, which a well-formed box never produces but a clipped one can.
@@ -114,7 +126,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineVertical,
       bold: figures.lineVerticalBold,
-      double: figures.lineVerticalDouble
+      double: figures.lineVerticalDouble,
+      none: ' '
     }
   ],
   [
@@ -122,7 +135,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.lineVertical,
       bold: figures.lineVerticalBold,
-      double: figures.lineVerticalDouble
+      double: figures.lineVerticalDouble,
+      none: ' '
     }
   ],
   [
@@ -130,7 +144,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.line,
       bold: figures.lineBold,
-      double: figures.lineDouble
+      double: figures.lineDouble,
+      none: ' '
     }
   ],
   [
@@ -138,7 +153,8 @@ const GLYPHS = (new Map<number, GlyphStyles>([
     {
       normal: figures.line,
       bold: figures.lineBold,
-      double: figures.lineDouble
+      double: figures.lineDouble,
+      none: ' '
     }
   ]
 ]));

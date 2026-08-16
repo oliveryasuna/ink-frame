@@ -47,7 +47,7 @@ const FrameExample = (() => {
   };
 
   return (
-    <Frame width={width} height={height} borderColor="cyan">
+    <Frame width={width} height={height} borderColor="cyan" borderStyle="none">
       {/* `Pane` takes any Box prop for its content. */}
       <Pane rect={header} paddingX={1} justifyContent="space-between">
         <Text bold>Frame</Text>

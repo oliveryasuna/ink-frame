@@ -112,7 +112,7 @@ If the fixed sizes don't fit, they scale down instead of overflowing. A terminal
 
 ## Border styles
 
-`borderStyle` takes `'normal'` (the default), `'bold'`, or `'double'`, and `borderColor` takes any Ink color:
+`borderStyle` takes `'normal'` (the default), `'bold'`, `'double'`, or `'none'`, and `borderColor` takes any Ink color:
 
 ```tsx
 <Frame width={width} height={height} borderStyle="double" borderColor="green">
