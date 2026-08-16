@@ -1,3 +1,4 @@
+import type {BorderStyle} from './Frame.props';
 import figures from 'figures';
 
 /**
@@ -13,14 +14,7 @@ const DOWN = 2;
 const LEFT = 4;
 const RIGHT = 8;
 
-interface GlyphStyles {
-  normal: string;
-  bold: string;
-  double: string;
-  none: string;
-}
-
-const GLYPHS = (new Map<number, GlyphStyles>([
+const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
   [
     (UP | DOWN),
     {
@@ -162,12 +156,9 @@ const GLYPHS = (new Map<number, GlyphStyles>([
 /** The character for a cell, or a space where no line passes through it. */
 const glyphFor = ((
   edges: number,
-  style: (keyof GlyphStyles)
+  style: BorderStyle
 ): string => (GLYPHS.get(edges)?.[style] ?? ' '));
 
-export type {
-  GlyphStyles
-};
 export {
   UP,
   DOWN,

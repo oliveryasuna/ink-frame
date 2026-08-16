@@ -1,5 +1,6 @@
+import type {BorderStyle} from './Frame.props';
 import type {Rect} from './rect';
-import {DOWN, glyphFor, type GlyphStyles, LEFT, RIGHT, UP} from './glyphs';
+import {DOWN, glyphFor, LEFT, RIGHT, UP} from './glyphs';
 
 /**
  * Paints `rect`'s border into `edges`, a `height * width` grid of edge masks.
@@ -53,7 +54,7 @@ const renderBorders = ((
   width: number,
   height: number,
   rects: Rect[],
-  borderStyle: (keyof GlyphStyles)
+  borderStyle: BorderStyle
 ): string[] => {
   const edges = Array.from<number>({length: Math.max(0, (width * height))}).fill(0);
 
@@ -63,9 +64,8 @@ const renderBorders = ((
 
   return Array.from(
     {length: Math.max(0, height)},
-    ((_unused, y) => (
-      Array.from({length: Math.max(0, width)}, ((_ignored, x: number): string => glyphFor((edges[(y * width) + x] ?? 0), borderStyle))).join('')
-    ))
+    ((_, y: number): string =>
+      (Array.from({length: Math.max(0, width)}, ((_2, x: number): string => glyphFor((edges[(y * width) + x] ?? 0), borderStyle))).join('')))
   );
 });
 

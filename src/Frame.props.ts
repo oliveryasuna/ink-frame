@@ -1,11 +1,12 @@
-import type {GlyphStyles} from './glyphs';
 import type {BoxProps} from 'ink';
 import type React from 'react';
+
+type BorderStyle = ('normal' | 'bold' | 'double' | 'none');
 
 interface FrameProps {
   width: number;
   height: number;
-  borderStyle?: (keyof GlyphStyles);
+  borderStyle?: BorderStyle;
   borderColor?: BoxProps['borderColor'];
   /**
    * Draws no borders at all, and reserves no space for them: content fills each
@@ -20,5 +21,6 @@ interface FrameProps {
 }
 
 export type {
+  BorderStyle,
   FrameProps
 };
