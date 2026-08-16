@@ -1,7 +1,15 @@
 import type {BoxProps} from 'ink';
 import type React from 'react';
 
-type BorderStyle = ('normal' | 'bold' | 'double' | 'none');
+// `normal` is deprecated and will be removed in the next major version.
+// There is no way to mark a string in the union type as deprecated.
+type BorderStyle = (
+  | 'normal'
+  | 'single'
+  | 'bold'
+  | 'double'
+  | 'none'
+);
 
 interface FrameProps {
   width: number;

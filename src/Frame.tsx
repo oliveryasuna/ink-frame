@@ -39,7 +39,7 @@ const Frame = ((
     width,
     height,
     borderColor,
-    borderStyle = 'normal',
+    borderStyle = 'single',
     noBorders = false,
     children
   }: FrameProps

@@ -19,6 +19,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (UP | DOWN),
     {
       normal: figures.lineVertical,
+      single: figures.lineVertical,
       bold: figures.lineVerticalBold,
       double: figures.lineVerticalDouble,
       none: ' '
@@ -28,6 +29,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (LEFT | RIGHT),
     {
       normal: figures.line,
+      single: figures.line,
       bold: figures.lineBold,
       double: figures.lineDouble,
       none: ' '
@@ -37,6 +39,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (DOWN | RIGHT),
     {
       normal: figures.lineDownRight,
+      single: figures.lineDownRight,
       bold: figures.lineDownBoldRightBold,
       double: figures.lineDownDoubleRightDouble,
       none: ' '
@@ -46,6 +49,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (DOWN | LEFT),
     {
       normal: figures.lineDownLeft,
+      single: figures.lineDownLeft,
       bold: figures.lineDownBoldLeftBold,
       double: figures.lineDownDoubleLeftDouble,
       none: ' '
@@ -55,6 +59,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (UP | RIGHT),
     {
       normal: figures.lineUpRight,
+      single: figures.lineUpRight,
       bold: figures.lineUpBoldRightBold,
       double: figures.lineUpDoubleRightDouble,
       none: ' '
@@ -64,6 +69,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     (UP | LEFT),
     {
       normal: figures.lineUpLeft,
+      single: figures.lineUpLeft,
       bold: figures.lineUpBoldLeftBold,
       double: figures.lineUpDoubleLeftDouble,
       none: ' '
@@ -73,6 +79,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     ((UP | DOWN) | RIGHT),
     {
       normal: figures.lineUpDownRight,
+      single: figures.lineUpDownRight,
       bold: figures.lineUpBoldDownBoldRightBold,
       double: figures.lineUpDoubleDownDoubleRightDouble,
       none: ' '
@@ -82,6 +89,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     ((UP | DOWN) | LEFT),
     {
       normal: figures.lineUpDownLeft,
+      single: figures.lineUpDownLeft,
       bold: figures.lineUpBoldDownBoldLeftBold,
       double: figures.lineUpDoubleDownDoubleLeftDouble,
       none: ' '
@@ -91,6 +99,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     ((DOWN | LEFT) | RIGHT),
     {
       normal: figures.lineDownLeftRight,
+      single: figures.lineDownLeftRight,
       bold: figures.lineDownBoldLeftBoldRightBold,
       double: figures.lineDownDoubleLeftDoubleRightDouble,
       none: ' '
@@ -100,6 +109,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     ((UP | LEFT) | RIGHT),
     {
       normal: figures.lineUpLeftRight,
+      single: figures.lineUpLeftRight,
       bold: figures.lineUpBoldLeftBoldRightBold,
       double: figures.lineUpDoubleLeftDoubleRightDouble,
       none: ' '
@@ -109,6 +119,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     ((UP | DOWN | LEFT) | RIGHT),
     {
       normal: figures.lineUpDownLeftRight,
+      single: figures.lineUpDownLeftRight,
       bold: figures.lineUpBoldDownBoldLeftBoldRightBold,
       double: figures.lineUpDoubleDownDoubleLeftDoubleRightDouble,
       none: ' '
@@ -119,6 +130,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     UP,
     {
       normal: figures.lineVertical,
+      single: figures.lineVertical,
       bold: figures.lineVerticalBold,
       double: figures.lineVerticalDouble,
       none: ' '
@@ -128,6 +140,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     DOWN,
     {
       normal: figures.lineVertical,
+      single: figures.lineVertical,
       bold: figures.lineVerticalBold,
       double: figures.lineVerticalDouble,
       none: ' '
@@ -137,6 +150,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     LEFT,
     {
       normal: figures.line,
+      single: figures.line,
       bold: figures.lineBold,
       double: figures.lineDouble,
       none: ' '
@@ -146,6 +160,7 @@ const GLYPHS = (new Map<number, Record<BorderStyle, string>>([
     RIGHT,
     {
       normal: figures.line,
+      single: figures.line,
       bold: figures.lineBold,
       double: figures.lineDouble,
       none: ' '
