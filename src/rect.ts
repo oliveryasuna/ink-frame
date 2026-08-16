@@ -123,7 +123,6 @@ export type {
   Rect,
   PaneSize
 };
-
 export {
   interiorOf,
   splitColumns,

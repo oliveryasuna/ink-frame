@@ -10,6 +10,8 @@ Ink's own box borders are fine for a single box. Put two of them next to each ot
 
 ![Example](./media/example.png)
 
+Check out my [awesome-ink](https://github.com/oliveryasuna/awesome-ink) list for more awe-mazing-tastic Ink libraries!
+
 ## Install
 
 ```sh
