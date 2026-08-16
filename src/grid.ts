@@ -64,7 +64,7 @@ const renderBorders = ((
   return Array.from(
     {length: Math.max(0, height)},
     ((_unused, y) => (
-      Array.from({length: Math.max(0, width)}, ((_ignored, x) => glyphFor((edges[(y * width) + x] ?? 0), borderStyle))).join('')
+      Array.from({length: Math.max(0, width)}, ((_ignored, x: number): string => glyphFor((edges[(y * width) + x] ?? 0), borderStyle))).join('')
     ))
   );
 });

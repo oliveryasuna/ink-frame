@@ -42,13 +42,13 @@ const divide = ((
   const shared = (overlap ? Math.max(0, (sizes.length - 1)) : 0);
   const budget = (total + shared);
 
-  const requested = sizes.reduce<number>(((sum, size) => (sum + ((size === 'grow') ? 0 : size))), 0);
-  const growing = sizes.filter(size => (size === 'grow')).length;
+  const requested = sizes.reduce<number>(((sum: number, size: PaneSize): number => (sum + ((size === 'grow') ? 0 : size))), 0);
+  const growing = sizes.filter((size: PaneSize): boolean => (size === 'grow')).length;
 
   const forFixed = Math.max(0, (budget - (growing * MINIMUM_SIZE)));
   const scale = (((requested > forFixed) && (requested > 0)) ? (forFixed / requested) : 1);
 
-  const fixed = sizes.map(size => ((size === 'grow') ? 0 : Math.max(0, Math.floor((size * scale)))));
+  const fixed = sizes.map((size: PaneSize): number => ((size === 'grow') ? 0 : Math.max(0, Math.floor((size * scale)))));
   const spent = fixed.reduce<number>(((sum, size) => (sum + size)), 0);
 
   let remaining = Math.max(0, (budget - spent));
@@ -79,7 +79,7 @@ const columns = ((
 ): Rect[] => {
   let left = rect.left;
 
-  return divide(rect.width, sizes, overlap).map((width) => {
+  return divide(rect.width, sizes, overlap).map((width: number): Rect => {
     const pane: Rect = {
       left: left,
       top: rect.top,
@@ -103,7 +103,7 @@ const rows = ((
 ): Rect[] => {
   let top = rect.top;
 
-  return divide(rect.height, sizes, overlap).map((height) => {
+  return divide(rect.height, sizes, overlap).map((height: number): Rect => {
     const pane: Rect = {
       left: rect.left,
       top: top,
