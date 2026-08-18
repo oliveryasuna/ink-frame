@@ -1,6 +1,6 @@
 ![Banner](./media/banner.svg)
 
-Check out my [awesome-ink](https://github.com/oliveryasuna/awesome-ink) list for more awe-mazing-tastic Ink libraries!
+Check out [awesome-ink](https://github.com/oliveryasuna/awesome-ink) list for more awe-mazing-tastic Ink libraries!
 
 # ink-frame
 
