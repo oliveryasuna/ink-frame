@@ -43,19 +43,16 @@
     "package.json"
   ],
   "scripts": {
-    "build": "tsdown",
-    "check:bun": "bun run ./check-bun-version.ts",
-    "format:pkg": "syncpack format",
-    "lint": "eslint",
-    "prepack": "bun run build",
-    "prepare": "husky",
-    "typecheck": "tsc --noEmit"
+    "prepack": "tt prepack",
+    "prepare": "husky"
   },
   "dependencies": {
     "figures": "6.1.0"
   },
   "devDependencies": {
     "@oliveryasuna/eslint-config": "2.2.2",
+    "@oliveryasuna/ts-task": "1.2.0",
+    "@oliveryasuna/ts-task-summary": "1.0.0",
     "@oliveryasuna/tsdown-config": "1.0.1",
     "@secretlint/secretlint-rule-preset-recommend": "13.0.2",
     "@total-typescript/ts-reset": "0.6.1",

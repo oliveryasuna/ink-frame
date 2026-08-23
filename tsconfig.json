@@ -1,99 +1,17 @@
 {
-  "include": [
-    "./global.d.ts",
-    "./**/*.ts",
-    "./**/*.tsx"
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {"path": "./tsconfig.build.json"},
+    {"path": "./tsconfig.config.json"},
+    {"path": "./examples/tsconfig.json"}
   ],
   "compilerOptions": {
-    // ==================================================
-    // Type checking
-    // ==================================================
-
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "alwaysStrict": true,
-    "exactOptionalPropertyTypes": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "strictBindCallApply": true,
-    "strictBuiltinIteratorReturn": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "useUnknownInCatchVariables": true,
-
-    // ==================================================
-    // Modules
-    // ==================================================
-
-    "allowImportingTsExtensions": true,
-    "baseUrl": "./",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "paths": {},
-    "resolveJsonModule": true,
-    "rootDir": "./",
-    "types": [
-      "bun"
-    ],
-
-    // ==================================================
-    // Emit
-    // ==================================================
-
-    "declaration": true,
-    "declarationMap": true,
-    "noEmit": true,
-    "noEmitOnError": true,
-
-    // ==================================================
-    // JavaScript support
-    // ==================================================
-
-    "allowJs": false,
-
-    // ==================================================
-    // Interop constraints
-    // ==================================================
-
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-
     // ==================================================
     // Language and environment
     // ==================================================
 
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "jsx": "react-jsx",
-    "lib": ["ESNext"],
-    "target": "ES2020",
-
-    // ==================================================
-    // Projects
-    // ==================================================
-
-    "composite": true,
-
-    // ==================================================
-    // Output formatting
-    // ==================================================
-
-    "noErrorTruncation": true,
-
-    // ==================================================
-    // Completeness
-    // ==================================================
-
-    "skipLibCheck": true
+    "jsx": "react-jsx"
   }
 }
