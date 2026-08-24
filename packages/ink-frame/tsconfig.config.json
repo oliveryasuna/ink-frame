@@ -1,9 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "./global.d.ts",
-    "./*.ts",
-    "./shared/**/*.ts"
+    "../../global.d.ts",
+    "../../shared/**/*.ts",
+    "./*.ts"
   ],
   "compilerOptions": {
     //==================================================

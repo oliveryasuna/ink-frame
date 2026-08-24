@@ -4,5 +4,6 @@ minimumReleaseAge = 259200  # 3 days
 # TODO: Remove once 3 days old.
 minimumReleaseAgeExcludes = [
   "@oliveryasuna/ts-task",
-  "@oliveryasuna/ts-task-summary"
+  "@oliveryasuna/ts-task-summary",
+  "@oliveryasuna/ts-task-merge-tasks"
 ]

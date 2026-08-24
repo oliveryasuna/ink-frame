@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {"path": "./tsconfig.build.json"},
+    {"path": "./tsconfig.config.json"},
+    {"path": "./examples/tsconfig.json"}
+  ],
+  "compilerOptions": {
+    //==================================================
+    // Language and environment
+    //==================================================
+
+    "jsx": "react-jsx"
+  }
+}

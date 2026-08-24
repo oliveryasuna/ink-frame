@@ -3,15 +3,7 @@
   "files": [],
   "include": [],
   "references": [
-    {"path": "./tsconfig.build.json"},
-    {"path": "./tsconfig.config.json"},
-    {"path": "./examples/tsconfig.json"}
+    {"path": "./tsconfig.config.json"}
   ],
-  "compilerOptions": {
-    // ==================================================
-    // Language and environment
-    // ==================================================
-
-    "jsx": "react-jsx"
-  }
+  "compilerOptions": {}
 }

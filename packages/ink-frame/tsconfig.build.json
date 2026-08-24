@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "./global.d.ts",
+    "../../global.d.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ],
