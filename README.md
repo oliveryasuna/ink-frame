@@ -29,6 +29,12 @@ drive everything from here.
 - `packages/*` — the published packages
 - `shared/` — build and task helpers shared across packages
 
+## Contributing
+
+Fully AI-generated pull requests are not accepted. You can use AI, but should be verified and cleaned up by a human. Only Opus 4.6+ (high-effort) and Codex 5.4+ (extra high) are accepted models. Preferably created with Opus and verified by Codex. *This blurb is adapted from [Ink](https://github.com/vadimdemedes/ink).*
+
+I think this is a reasonable requirement, particularly for a tiny library like this. If you think it's too strict, please open an issue and let me know why.
+
 ## License
 
 MIT © Oliver Yasuna
