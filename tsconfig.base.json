@@ -1,7 +1,6 @@
 {
   "exclude": [
     "./node_modules",
-    "./dist"
   ],
   "compilerOptions": {
     //==================================================
@@ -37,7 +36,10 @@
     "baseUrl": "./",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "paths": {},
+    "paths": {
+      "@oliveryasuna/ink-frame": ["./packages/ink-frame/src/index.ts"],
+      "@oliveryasuna/ink-frame-scroll": ["./packages/ink-frame-scroll/src/index.ts"]
+    },
     "resolveJsonModule": true,
     "rootDir": "./",
 
@@ -72,12 +74,6 @@
     "experimentalDecorators": true,
     "lib": ["ESNext"],
     "target": "ES2020",
-
-    //==================================================
-    // Projects
-    //==================================================
-
-    "composite": true,
 
     //==================================================
     // Output formatting

@@ -97,6 +97,16 @@ const lintDefFactory = makeDefFactory({
   })
 });
 
+const testDefFactory = makeDefFactory({
+  name: 'test',
+  description: 'Run tests with bun',
+  run: (async(ctx): Promise<void> => {
+    await sh(ctx, 'bun', ['test']);
+
+    ctx.log.info('tests passed');
+  })
+});
+
 const verifyDefFactory = makeDefFactory({
   name: 'verify',
   description: 'Verify the project',
@@ -117,6 +127,7 @@ export {
   typecheckDef,
   lintDefFactory,
   buildDefFactory,
+  testDefFactory,
   verifyDefFactory,
   ciDefFactory
 };

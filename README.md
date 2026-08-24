@@ -7,6 +7,7 @@ A monorepo of small, focused [Ink](https://github.com/vadimdemedes/ink) librarie
 | Package | Path | What it does |
 | --- | --- | --- |
 | [`@oliveryasuna/ink-frame`](./packages/ink-frame) | `packages/ink-frame` | Grids of bordered boxes whose borders join where they meet. |
+| [`@oliveryasuna/ink-frame-scroll`](./packages/ink-frame-scroll) | `packages/ink-frame-scroll` | A scrollable viewport sized to an ink-frame rect. |
 
 Each package has its own README with the details.
 

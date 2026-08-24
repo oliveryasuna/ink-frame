@@ -63,7 +63,8 @@ export default defineConfig({
   plugins: [
     summaryReporter(),
     (await mergeTasks(
-      'packages/ink-frame/tasks.config.ts'
+      'packages/ink-frame/tasks.config.ts',
+      'packages/ink-frame-scroll/tasks.config.ts'
     ))
   ],
   tasks: [
