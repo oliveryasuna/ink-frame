@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {"path": "./tsconfig.build.json"},
+    {"path": "./tsconfig.test.json"},
+    {"path": "./tsconfig.config.json"},
+    {"path": "./examples/tsconfig.json"}
+  ],
+  "compilerOptions": {
+    //==================================================
+    // Language and environment
+    //==================================================
+
+    // This package has no JSX, but its typecheck resolves
+    // `@oliveryasuna/ink-frame` to source, which includes `.tsx`, so the parser
+    // needs a JSX mode.
+    "jsx": "react-jsx"
+  }
+}
