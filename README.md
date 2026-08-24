@@ -20,7 +20,7 @@ bunx tt         # run the default 'verify' task
 bunx tt --help  # list available tasks
 ```
 
-Tasks are defined with [`ts-task`](https://www.npmjs.com/package/@oliveryasuna/ts-task): the root
+Tasks are defined with [`ts-task`](hhttps://github.com/oliveryasuna/ts-task): the root
 runs repo-wide checks and merges in each package's own tasks (build, lint, and so on), so you can
 drive everything from here.
 
